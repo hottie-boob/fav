@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Links</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#2f2f2f;
+    text-align:center;
+    color:white;
+}
+
+/* search bar */
+
+.search-box{
+    width:90%;
+    max-width:500px;
+    margin:25px auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+}
+
+/* section title */
+
+.section{
+    font-size:24px;
+    margin-top:40px;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+/* button container */
+
+.container{
+    width:90%;
+    max-width:500px;
+    margin:auto;
+}
+
+/* link buttons */
+
+.link-btn{
+    display:block;
+    background:#444;
+    color:white;
+    text-decoration:none;
+    padding:16px;
+    margin:12px 0;
+    border-radius:8px;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* hover effect */
+
+.link-btn:hover{
+    background:#666;
+    transform:scale(1.04);
+}
+
+.footer{
+    margin-top:40px;
+    opacity:0.7;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Search bar -->
+
+<div class="search-box">
+<input type="text" id="searchInput" onkeyup="searchLinks()" placeholder="Search links...">
+</div>
+
+<div class="container">
+
+<div class="section">📱 Mobile</div>
+
+<a class="link-btn" href="#">Minecraft Mobile</a>
+<a class="link-btn" href="#">Mobile Mods</a>
+<a class="link-btn" href="#">Texture Packs</a>
+
+<div class="section">💻 PC</div>
+
+<a class="link-btn" href="#">Minecraft PC</a>
+<a class="link-btn" href="#">Shaders</a>
+<a class="link-btn" href="#">PC Mods</a>
+
+</div>
+
+<div class="footer">
+© Withered Breeze
+</div>
+
+<script>
+
+function searchLinks() {
+
+let input = document.getElementById("searchInput");
+let filter = input.value.toLowerCase();
+let buttons = document.getElementsByClassName("link-btn");
+
+for (let i = 0; i < buttons.length; i++) {
+
+let text = buttons[i].textContent || buttons[i].innerText;
+
+if (text.toLowerCase().indexOf(filter) > -1) {
+buttons[i].style.display = "";
+} else {
+buttons[i].style.display = "none";
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
